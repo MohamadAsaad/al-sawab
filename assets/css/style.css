@@ -970,6 +970,8 @@ footer li {
     align-items: center;
     gap: var(--space-4);
     margin-bottom: var(--space-5);
+    background-color: #071b29;
+    padding: 10px;
 }
 
 .footer-logo-wrap {
@@ -980,7 +982,8 @@ footer li {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(239, 134, 38, 0.3);
+    border: 2px solid var(--gold);
+    
     flex-shrink: 0;
 }
 
