@@ -991,7 +991,7 @@ footer li {
 }
 
 .footer-brand-text .footer-brand-name {
-    font-size: var(--font-xl);
+    font-size: 23px;
     font-weight: 800;
     color: var(--white);
     display: block;
