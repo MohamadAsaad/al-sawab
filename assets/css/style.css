@@ -1690,13 +1690,13 @@ footer li {
     object-fit: contain;
 }
 
-.footer-brand-name {
+/* .footer-brand-name {
     font-size: var(--font-xl);
     font-weight: 800;
     color: var(--white);
     display: block;
     line-height: 1.2;
-}
+} */
 
 .footer-brand-tagline {
     font-size: var(--font-sm);
@@ -2149,13 +2149,13 @@ footer li {
     object-fit: contain;
 }
 
-.footer-brand-name {
+/* .footer-brand-name {
     font-size: var(--font-xl);
     font-weight: 800;
     color: var(--white);
     display: block;
     line-height: 1.2;
-}
+} */
 
 .footer-brand-tagline {
     font-size: var(--font-sm);
@@ -2630,13 +2630,13 @@ footer li {
     object-fit: contain;
 }
 
-.footer-brand-name {
-    font-size: var(--font-xl);
+/* .footer-brand-name {
+    font-size: 23px;
     font-weight: 800;
     color: var(--white);
     display: block;
     line-height: 1.2;
-}
+} */
 
 .footer-brand-tagline {
     font-size: var(--font-sm);
