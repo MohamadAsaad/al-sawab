@@ -362,7 +362,7 @@ p {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    /* background: linear-gradient(135deg, rgba(13, 43, 62, 0.6) 0%, rgba(13, 43, 62, 0.7) 100%); */
+    background: linear-gradient(135deg, rgb(228 234 237 / 60%) 0%, rgb(221 225 227 / 70%) 100%);
     z-index: 1;
 }
 
