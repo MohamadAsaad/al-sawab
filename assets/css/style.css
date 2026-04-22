@@ -1680,7 +1680,7 @@ footer li {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(239, 134, 38, 0.3);
+    border: 2px solid var(--gold);
     flex-shrink: 0;
 }
 
