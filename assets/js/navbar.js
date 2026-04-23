@@ -378,7 +378,7 @@
         <a href="index.html" class="nb-brand" aria-label="شركة الصواب - الصفحة الرئيسية">
             <div class="nb-logo-wrap">
                 <span class="nb-logo-ring" aria-hidden="true"></span>
-                <img src="assets/image/Logo.png" alt="شعار شركة الصواب" loading="eager" width="52" height="52">
+                <img src="Logo.png" alt="شعار شركة الصواب" loading="eager" width="52" height="52">
             </div>
             <div class="nb-brand-text">
                 <span class="nb-brand-name">شركة الصواب</span>
