@@ -577,26 +577,26 @@
                 <div class="col-lg-10 mx-auto" data-aos="fade-up">
                     <div class="contact-form">
                         <h3 class="text-center mb-5">أرسل لنا رسالة</h3>
-                        <form>
+                        <form id="contactForm" novalidate>
                             <div class="row g-4">
                                 <div class="col-md-6">
                                     <label class="form-label" for="contactName">الاسم الكامل</label>
-                                    <input type="text" id="contactName" class="form-control"
+                                    <input type="text" id="contactName" name="fullName" class="form-control"
                                         placeholder="أدخل اسمك الكامل" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="contactEmail">البريد الإلكتروني</label>
-                                    <input type="email" id="contactEmail" class="form-control"
+                                    <input type="email" id="contactEmail" name="emailAddr" class="form-control"
                                         placeholder="example@email.com" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="contactPhone">رقم الهاتف</label>
-                                    <input type="tel" id="contactPhone" class="form-control"
+                                    <input type="tel" id="contactPhone" name="phoneNum" class="form-control"
                                         placeholder="+218 XX XXX XXXX" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="contactService">نوع الخدمة</label>
-                                    <select id="contactService" class="form-select" required>
+                                    <select id="contactService" name="serviceType" class="form-select" required>
                                         <option value="">اختر الخدمة</option>
                                         <option value="calibration">معايرة الأجهزة</option>
                                         <option value="ndt">اختبار عدم الإتلاف (NDT)</option>
@@ -608,7 +608,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label" for="contactMessage">الرسالة</label>
-                                    <textarea id="contactMessage" class="form-control" rows="5"
+                                    <textarea id="contactMessage" name="messageText" class="form-control" rows="5"
                                         placeholder="اكتب رسالتك هنا..." required></textarea>
                                 </div>
                                 <div class="col-12 text-center">
@@ -620,6 +620,10 @@
                                 </div>
                             </div>
                         </form>
+                        <div class="form-success text-center mt-4" id="formSuccess" style="display:none; color:#10b981; font-weight:bold;">
+                            <i class="fas fa-check-circle" style="font-size:2rem; margin-bottom:var(--space-3); display:block;"></i>
+                            شكراً لك! تم إرسال رسالتك بنجاح.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -635,7 +639,7 @@
                 <div class="col-lg-4">
                     <div class="footer-brand">
                         <div class="footer-logo-wrap">
-                            <img src="assets/image/logo.png" alt="شعار شركة الصواب">
+                            <img src="assets/image/logo-light.png" alt="شعار شركة الصواب">
                         </div>
                         <div class="footer-brand-text">
                             <span class="footer-brand-name">شركة الصواب</span>
@@ -850,6 +854,47 @@
                 1024: { slidesPerView: 3, spaceBetween: 32 }
             }
         });
+
+        /* ─── Contact Form Submission ─── */
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!this.checkValidity()) {
+                    this.reportValidity();
+                    return;
+                }
+                const submitBtn = document.getElementById('submitBtn');
+                const formSuccess = document.getElementById('formSuccess');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري الإرسال...</span>';
+                submitBtn.disabled = true;
+
+                fetch('https://formsubmit.co/ajax/info@assawab.com', {
+                    method: 'POST',
+                    body: new FormData(this)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        contactForm.style.display = 'none';
+                        formSuccess.style.display = 'block';
+                    } else {
+                        throw new Error('Server error');
+                    }
+                })
+                .catch(error => {
+                    submitBtn.innerHTML = '<i class="fas fa-times"></i> <span>فشل الإرسال</span>';
+                    submitBtn.style.background = '#ef4444';
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                });
+            });
+        }
     </script>
 
 </body>
