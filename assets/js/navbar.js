@@ -122,24 +122,24 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 12px;
-            border: 2px solid var(--nb-gold);
-            background: var(--nb-white);
+            // border-radius: 12px;
+            // border: 2px solid var(--nb-gold);
+            // background: var(--nb-white);
             padding: 4px;
-            box-shadow: 0 2px 8px rgba(200, 164, 93, 0.22);
+            // box-shadow: 0 2px 8px rgba(200, 164, 93, 0.22);
             transition: box-shadow 0.3s var(--nb-ease);
         }
         .nb-brand:hover .nb-logo-wrap img {
-            box-shadow: 0 6px 20px rgba(200, 164, 93, 0.45);
+            // box-shadow: 0 6px 20px rgba(200, 164, 93, 0.45);
         }
 
         /* حلقة ذهبية عند التحويم */
         .nb-logo-ring {
             position: absolute;
             inset: -5px;
-            border-radius: 16px;
-            border: 2px solid var(--nb-gold);
-            opacity: 0;
+            // border-radius: 16px;
+            // border: 2px solid var(--nb-gold);
+            // opacity: 0;
             transform: scale(1.1);
             transition: all 0.35s var(--nb-ease);
         }
@@ -378,7 +378,7 @@
         <a href="index.html" class="nb-brand" aria-label="شركة الصواب - الصفحة الرئيسية">
             <div class="nb-logo-wrap">
                 <span class="nb-logo-ring" aria-hidden="true"></span>
-                <img src="logo.png" alt="شعار شركة الصواب" loading="eager" width="52" height="52">
+                <img src="assets/image/logo-dark.png" alt="شعار شركة الصواب" loading="eager" width="52" height="52">
             </div>
             <div class="nb-brand-text">
                 <span class="nb-brand-name">شركة الصواب</span>

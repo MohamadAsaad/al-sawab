@@ -10,9 +10,11 @@
     --primary: #002136;
     --primary-light: #16405B;
     --primary-dark: #002136;
+    /*--primary-dark:#071824*/
     --gold: #EF8626;
     --gold-light: #F2A25C;
-    --gold-dark: #C96B16;
+    --gold-dark: #EF8626;
+    /*--gold-dark:#C96B16*/
     --light: #F8F9FA;
     --white: #FFFFFF;
     --gray-50: #F9FAFB;
@@ -381,11 +383,12 @@ p {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: var(--space-16) 0;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: 800;
     line-height: var(--leading-tight);
     text-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -401,7 +404,7 @@ p {
     margin-bottom: var(--space-8);
     max-width: 620px;
     color: var(--primary-dark) !important;
-    text-shadow: 2px 6px 15px #000000;
+    /* text-shadow: 2px 6px 15px #000000; */
 }
 
 .hero-features {
@@ -1154,13 +1157,13 @@ section {
 .vm-icon {
     width: 72px;
     height: 72px;
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--primary);
     border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: var(--white);
+    color: var(--gold);
     margin-bottom: var(--space-6);
     transition: var(--transition-base);
 }
@@ -2143,12 +2146,13 @@ footer li {
 .footer-logo-wrap {
     width: 60px;
     height: 60px;
-    background: var(--white);
+    /* background: var(--white);
     border-radius: var(--radius-lg);
+    border: 2px solid var(--gold); */
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--gold);
+
     flex-shrink: 0;
 }
 
