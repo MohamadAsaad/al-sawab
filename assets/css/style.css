@@ -2170,7 +2170,7 @@ footer li {
     align-items: center;
     gap: var(--space-4);
     margin-bottom: var(--space-5);
-    background-color: #071b29;
+    /* background-color: #071b29; */
     padding: 10px;
 }
 
