@@ -1,30 +1,28 @@
 RewriteEngine On
 
-# تحويل الروابط التي لا تنتهي بـ .html إلى ملفات .html
+RewriteCond %{THE_REQUEST} \s/index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteRule ^(.+)$ $1.html [L]
 
-# إعادة توجيه (301) للمستخدمين من الروابط التي تنتهي بـ .html إلى الروابط النظيفة (مهم للسيو)
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP
-RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+DirectoryIndex index.html
 
-# تفعيل ضغط GZIP لتسريع الموقع (مهم للسيو)
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
 </IfModule>
 
-# تفعيل التخزين المؤقت للمتصفح (Browser Caching)
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpg "access 1 year"
   ExpiresByType image/jpeg "access 1 year"
-  ExpiresByType image/gif "access 1 year"
   ExpiresByType image/png "access 1 year"
   ExpiresByType text/css "access 1 month"
-  ExpiresByType application/pdf "access 1 month"
-  ExpiresByType text/x-javascript "access 1 month"
-  ExpiresByType application/x-shockwave-flash "access 1 month"
-  ExpiresByType image/x-icon "access 1 year"
+  ExpiresByType application/javascript "access 1 month"
   ExpiresDefault "access 2 days"
 </IfModule>
