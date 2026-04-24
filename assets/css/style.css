@@ -2203,7 +2203,7 @@ footer li {
 
 .footer-brand-text .footer-brand-tagline {
     font-size: var(--font-sm);
-    color: var(--gold);
+    color: var(--white);
     display: block;
     margin-top: 2px;
 }
