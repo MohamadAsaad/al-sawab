@@ -555,7 +555,7 @@ section {
 }
 
 .stat-number {
-    font-size: clamp(var(--font-4xl), 5vw, var(--font-6xl));
+    font-size: clamp(var(--font-4xl), 4vw, var(--font-6xl));
     font-weight: 800;
     color: var(--gold);
     line-height: 1;
@@ -955,7 +955,8 @@ section {
         padding-top: calc(var(--space-16) + 40px);
     }
 
-    .hero-title, .hero-subtitle {
+    .hero-title,
+    .hero-subtitle {
         margin-left: auto;
         margin-right: auto;
     }
