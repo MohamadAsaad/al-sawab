@@ -568,6 +568,20 @@ section {
     font-weight: 500;
 }
 
+.stat-label span {
+
+    display: inline;
+}
+
+/* Only apply these styles for screens smaller than 992px (Mobile & Tablet) */
+@media (max-width: 991.98px) {
+    .stat-label span {
+
+        display: block;
+    }
+}
+
+
 /* ========================================
            SECTOR CARDS
         ======================================== */
